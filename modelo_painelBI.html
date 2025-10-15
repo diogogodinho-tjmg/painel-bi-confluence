@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel BI DIRTEC</title>
+    <style>
+        /* Estilos básicos para o painel */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f5f7; /* Cor de fundo semelhante ao Confluence */
+            color: #333;
+        }
+
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        }
+
+        h1 {
+            text-align: left;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+        }
+
+        .dashboard-columns {
+            display: flex;
+            flex-wrap: wrap; /* Permite que as colunas quebrem linha em telas menores */
+            gap: 20px; /* Espaçamento entre as colunas */
+            margin-bottom: 40px;
+        }
+
+        .dashboard-column {
+            flex: 1; /* Cada coluna ocupa espaço igual */
+            min-width: 300px; /* Largura mínima para evitar que os cards fiquem muito apertados */
+            display: flex;
+            flex-direction: column; /* Para os cards dentro da coluna ficarem empilhados */
+            gap: 20px; /* Espaçamento entre os cards dentro de uma coluna */
+        }
+
+        .kpi-card {
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            line-height: 1.5;
+            flex-grow: 1; /* Faz com que os cards preencham o espaço disponível */
+            min-height: 100px; /* Altura mínima para os cards */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .kpi-card h2 {
+            font-size: 1.4em;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .kpi-card p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+
+        .kpi-value {
+            font-size: 2.2em;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        /* Cores dos cards */
+        .kpi-card.black {
+            background-color: #2c3e50; /* Cor escura */
+            color: #ecf0f1; /* Texto claro */
+        }
+        .kpi-card.red {
+            background-color: #e74c3c; /* Vermelho vibrante */
+            color: #ecf0f1;
+        }
+        .kpi-card.yellow {
+            background-color: #f1c40f; /* Amarelo */
+            color: #2c3e50; /* Texto escuro para contraste */
+        }
+        .kpi-card.blue {
+            background-color: #3498db; /* Azul */
+            color: #ecf0f1;
+        }
+
+        /* Estilo para o placeholder do iframe */
+        .iframe-placeholder, .iframe-placeholder-full {
+            border: 1px dashed #ccc;
+            padding: 20px;
+            text-align: center;
+            font-style: italic;
+            color: #999;
+            margin-top: 20px;
+            min-height: 150px; /* Altura para visualizar o placeholder */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f9f9f9;
+        }
+
+        .iframe-placeholder-full {
+            min-height: 250px; /* Maior para o rodapé */
+            width: 100%;
+        }
+
+        /* Estilos para a seção "Ações em Destaque" */
+        h3 {
+            text-align: left;
+            color: #2c3e50;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        /* Responsividade básica */
+        @media (max-width: 768px) {
+            .dashboard-columns {
+                flex-direction: column;
+            }
+            .dashboard-column {
+                min-width: unset; /* Remove a largura mínima para preencher 100% */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>DIRTEC em números</h1>
+
+        <div class="dashboard-columns">
+            <!-- Coluna 1 -->
+            <div class="dashboard-column">
+                <div class="kpi-card black">
+                    <h2>Projetos</h2>
+                    <p>em andamento</p>
+                    <p class="kpi-value">141</p>
+                    <p>concluídos</p>
+                    <p class="kpi-value">78</p>
+                    <!-- ESPAÇO PARA IFRAME (EX: GRÁFICO DE PROJETOS) -->
+                    <div class="iframe-placeholder" data-kpi="projetos">
+                        Conteúdo do Iframe de Projetos aqui
+                        <br><code>&lt;iframe src="URL_DO_SEU_BI" width="100%" height="200px"&gt;&lt;/iframe&gt;</code>
+                    </div>
+                </div>
+                <div class="kpi-card red">
+                    <h2>Mudanças executadas</h2>
+                    <p class="kpi-value">4.154</p>
+                    <!-- ESPAÇO PARA IFRAME (EX: GRÁFICO DE MUDANÇAS) -->
+                    <div class="iframe-placeholder" data-kpi="mudancas">
+                        Conteúdo do Iframe de Mudanças aqui
+                        <br><code>&lt;iframe src="URL_DO_SEU_BI" width="100%" height="150px"&gt;&lt;/iframe&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna 2 -->
+            <div class="dashboard-column">
+                <div class="kpi-card yellow">
+                    <h2>Demandas</h2>
+                    <p>em andamento</p>
+                    <p class="kpi-value">17.905</p>
+                    <p>concluídas</p>
+                    <p class="kpi-value">48.880</p>
+                    <!-- ESPAÇO PARA IFRAME (EX: GRÁFICO DE DEMANDAS) -->
+                    <div class="iframe-placeholder" data-kpi="demandas">
+                        Conteúdo do Iframe de Demandas aqui
+                        <br><code>&lt;iframe src="URL_DO_SEU_BI" width="100%" height="200px"&gt;&lt;/iframe&gt;</code>
+                    </div>
+                </div>
+                <div class="kpi-card black">
+                    <h2>Chamados Criados</h2>
+                    <p class="kpi-value">219.870</p>
+                    <p>incidentes</p>
+                    <p class="kpi-value">116.289</p>
+                    <p>requisições</p>
+                    <p class="kpi-value">59.609</p>
+                    <!-- ESPAÇO PARA IFRAME (EX: GRÁFICO DE CHAMADOS) -->
+                    <div class="iframe-placeholder" data-kpi="chamados">
+                        Conteúdo do Iframe de Chamados aqui
+                        <br><code>&lt;iframe src="URL_DO_SEU_BI" width="100%" height="250px"&gt;&lt;/iframe&gt;</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna 3 -->
+            <div class="dashboard-column">
+                <div class="kpi-card black">
+                    <h2>Orçamento Planejado</h2>
+                    <p class="kpi-value">R\$ 265.278.244,95</p>
+                    <h2>Executado</h2>
+                    <p class="kpi-value">R\$ 95.657.838,50</p>
+                    <!-- ESPAÇO PARA IFRAME (EX: GRÁFICO DE ORÇAMENTO) -->
+                    <div class="iframe-placeholder" data-kpi="orcamento">
+                        Conteúdo do Iframe de Orçamento aqui
+                        <br><code>&lt;iframe src="URL_DO_SEU_BI" width="100%" height="200px"&gt;&lt;/iframe&gt;</code>
+                    </div>
+                </div>
+                <div class="kpi-card blue">
+                    <h2>Servidores</h2>
+                    <p class="kpi-value">231</p>
+                    <!-- ESPAÇO PARA IFRAME (EX: GRÁFICO DE SERVIDORES) -->
+                    <div class="iframe-placeholder" data-kpi="servidores">
+                        Conteúdo do Iframe de Servidores aqui
+                        <br><code>&lt;iframe src="URL_DO_SEU_BI" width="100%" height="150px"&gt;&lt;/iframe&gt;</code>
+                    </div>
+                </div>
+                <div class="kpi-card blue">
+                    <h2>Colaboradores</h2>
+                    <p class="kpi-value">419</p>
+                    <!-- ESPAÇO PARA IFRAME (EX: GRÁFICO DE COLABORADORES) -->
+                    <div class="iframe-placeholder" data-kpi="colaboradores">
+                        Conteúdo do Iframe de Colaboradores aqui
+                        <br><code>&lt;iframe src="URL_DO_SEU_BI" width="100%" height="150px"&gt;&lt;/iframe&gt;</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Ações em Destaque na DIRTEC</h3>
+        <!-- ESPAÇO PARA UM IFRAME MAIOR DE AÇÕES EM DESTAQUE -->
+        <div class="iframe-placeholder-full" data-kpi="acoes-destaque">
+            Conteúdo do Iframe de Ações em Destaque aqui (pode ser uma lista, um dashboard mais completo)
+            <br><code>&lt;iframe src="URL_DO_SEU_BI" width="100%" height="300px"&gt;&lt;/iframe&gt;</code>
+        </div>
+    </div>
+</body>
+</html>
