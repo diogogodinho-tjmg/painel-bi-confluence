@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel DIRTEC em Números - TJMG</title>
+    <title>Painel DIRTEC em Números - TJMG (Preview)</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            margin: 20px;
-            background-color: #f0f0f0; /* Fundo claro, similar ao Confluence */
+            margin: 0;
+            padding: 20px; /* Adiciona um padding geral para não colar nas bordas */
+            background-color: #f0f0f0; /* Fundo claro para o container principal */
             color: #333;
             line-height: 1.6;
         }
@@ -18,29 +19,20 @@
             font-size: 2.2em;
             color: #2e2e2e;
         }
-        h2 {
-            text-align: left;
-            margin-top: 50px;
-            margin-bottom: 20px;
-            font-size: 1.8em;
-            color: #2e2e2e;
-        }
-        .kpi-container {
+        .kpi-wrapper {
             display: flex;
-            justify-content: space-around; /* Distribui as colunas uniformemente */
-            gap: 25px; /* Espaço entre iframes */
-            flex-wrap: wrap; /* Quebra linha em telas menores */
-            align-items: flex-start; /* Alinha pelo topo */
+            flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+            justify-content: center; /* Centraliza as colunas */
+            gap: 20px; /* Espaço entre as colunas de iframes */
         }
-        iframe {
-            border: none; /* Sem bordas */
-            flex: 1; /* Cresce para preencher espaço */
-            min-width: 280px; /* Largura mínima */
-            height: 460px; /* Altura fixa para alinhamento */
-            background-color: transparent;
-            overflow: hidden;
-            padding: 0;
-            margin: 0;
+        .kpi-column-iframe {
+            flex: 1; /* Cresce para preencher o espaço disponível */
+            min-width: 300px; /* Largura mínima para cada coluna */
+            max-width: 350px; /* Largura máxima para cada coluna */
+            height: 400px; /* Altura total para 2 KPIs de 200px cada */
+            border: none; /* Remove borda do iframe */
+            overflow: hidden; /* Garante que não apareça barra de rolagem */
+            background-color: transparent; /* Permite que o fundo do body do iframe apareça */
         }
         .footer-content {
             margin-top: 40px;
@@ -54,37 +46,30 @@
         .footer-content a:hover {
             text-decoration: underline;
         }
-        /* Responsividade */
-        @media (max-width: 992px) {
-            .kpi-container {
+        /* Responsividade para telas muito pequenas */
+        @media (max-width: 768px) {
+            .kpi-wrapper {
                 flex-direction: column;
                 align-items: center;
             }
-            iframe {
+            .kpi-column-iframe {
                 width: 90%;
-                max-width: 400px;
-                height: auto;
-                margin-bottom: 20px;
-            }
-            iframe:last-child {
-                margin-bottom: 0;
+                max-width: 400px; /* Max width para mobile */
             }
         }
     </style>
 </head>
 <body>
-    <h1>DIRTEC em Números</h1>
+    <h1>Painel DIRTEC em Números - TJMG (Preview)</h1>
 
-    <div class="kpi-container">
-        <iframe src="kpis_coluna1.html" scrolling="no"></iframe>
-        <iframe src="kpis_coluna2.html" scrolling="no"></iframe>
-        <iframe src="kpis_coluna3.html" scrolling="no"></iframe>
+    <div class="kpi-wrapper">
+        <iframe class="kpi-column-iframe" src="kpi_coluna1.html" scrolling="no"></iframe>
+        <iframe class="kpi-column-iframe" src="kpi_coluna2.html" scrolling="no"></iframe>
+        <iframe class="kpi-column-iframe" src="kpi_coluna3.html" scrolling="no"></iframe>
     </div>
 
-    <h2>Ações em Destaque na DIRTEC</h2>
     <div class="footer-content">
-        <p>Jira and Confluence are better together | Confluence | Atlassian</p>
-        <p><a href="https://www.atlassian.com/" >Saiba mais sobre Atlassian</a></p>
+        <p>Preview do painel de B.I. modular. Para visualização individual ou embed no Confluence, use os links específicos de cada KPI.</p>
     </div>
 </body>
 </html>
