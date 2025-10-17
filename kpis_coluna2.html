@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KPI Coluna 2 - Demandas e Chamados</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .kpi-block {
+            text-align: center;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .kpi-block:last-child {
+            margin-bottom: 0;
+        }
+        .kpi-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .kpi-value-label {
+            font-size: 0.9em;
+            margin-top: 5px;
+            opacity: 0.8;
+        }
+        .kpi-value {
+            font-size: 2.2em;
+            font-weight: bold;
+            line-height: 1.1;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+        .kpi-sub-value-label {
+            font-size: 0.8em;
+            margin-top: 5px;
+            opacity: 0.7;
+        }
+        .kpi-sub-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        /* Cores */
+        .bg-yellow { background-color: #FFD700; color: #333; } /* Amarelo com texto escuro */
+        .bg-black { background-color: #2e2e2e; } /* Cinza escuro */
+    </style>
+</head>
+<body>
+    <div class="kpi-block bg-yellow">
+        <div class="kpi-title">Demandas</div>
+        <div class="kpi-value-label">em andamento</div>
+        <div class="kpi-value">17.905</div>
+        <div class="kpi-value-label">concluídas</div>
+        <div class="kpi-value">48.880</div>
+    </div>
+    <div class="kpi-block bg-black">
+        <div class="kpi-title">Chamados Criados</div>
+        <div class="kpi-value">219.870</div>
+        <div class="kpi-sub-value-label">incidentes</div>
+        <div class="kpi-sub-value">116.289</div>
+        <div class="kpi-sub-value-label">requisições</div>
+        <div class="kpi-sub-value">59.609</div>
+    </div>
+</body>
+</html>
