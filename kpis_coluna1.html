@@ -7,20 +7,20 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            margin: 0; /* Remove margens do corpo do iframe */
-            padding: 0; /* Remove paddings do corpo do iframe */
+            margin: 0;
+            padding: 0;
             background-color: #ffffff; /* Fundo branco para se misturar ao Confluence */
             color: white; /* Cor de texto padrão para blocos escuros */
-            display: flex; /* Habilita flexbox no corpo */
-            flex-direction: column; /* Organiza os blocos em coluna */
+            display: flex;
+            flex-direction: column;
             overflow: hidden; /* Evita barras de rolagem indesejadas no iframe */
         }
         .kpi-block {
             text-align: center;
-            padding: 25px 15px; /* Aumentado o padding vertical para mais espaço */
+            padding: 20px 15px; /* Ajustado padding vertical */
             margin-bottom: 0; /* Quadros colados */
             /* border-radius: 5px; REMOVIDO: Cantos não arredondados */
-            height: 300px; /* ALTURA PADRÃO PARA CADA QUADRO */
+            height: 250px; /* ALTURA PADRÃO PARA CADA QUADRO */
             display: flex;
             flex-direction: column;
             justify-content: center; /* Centraliza o conteúdo verticalmente */
@@ -29,23 +29,23 @@
             flex-shrink: 0; /* Garante que os blocos não diminuam */
         }
         .kpi-title {
-            font-size: 1.2em;
+            font-size: 1.1em; /* Ligeiramente menor */
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 8px; /* Ajustado margin */
             line-height: 1.2;
         }
         .kpi-value-label {
-            font-size: 0.9em;
-            margin-top: 5px;
+            font-size: 0.85em; /* Ligeiramente menor */
+            margin-top: 4px; /* Ajustado margin */
             opacity: 0.8;
             line-height: 1.2;
         }
         .kpi-value {
-            font-size: 2.2em;
+            font-size: 2em; /* Ligeiramente menor */
             font-weight: bold;
             line-height: 1.1;
             margin-top: 5px;
-            margin-bottom: 10px;
+            margin-bottom: 8px; /* Ajustado margin */
         }
         /* Cores conforme especificado */
         .bg-black { background-color: #1e1f21; } /* Preto escuro */
