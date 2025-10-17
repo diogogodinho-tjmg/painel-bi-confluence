@@ -7,28 +7,29 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0; /* Mescla com o fundo principal */
-            color: white; /* Texto branco para blocos escuros */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%;
+            margin: 0; /* Remove margens do corpo do iframe */
+            padding: 0; /* Remove paddings do corpo do iframe */
+            background-color: #ffffff; /* Fundo branco para se misturar ao Confluence */
+            color: white; /* Cor de texto padrão para blocos escuros */
+            display: flex; /* Habilita flexbox no corpo */
+            flex-direction: column; /* Organiza os blocos em coluna */
+            /* height: 100%; Removido: altura será definida pelo conteúdo dos blocos */
         }
         .kpi-block {
             text-align: center;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 5px; /* Bordas arredondadas como no Confluence */
-            flex-grow: 1;
+            padding: 15px; /* Mantém o padding interno */
+            margin-bottom: 0; /* REMOVIDO: Não haverá mais margem entre os blocos */
+            border-radius: 5px; /* Bordas arredondadas (se quiser remover, só apagar esta linha) */
+            height: 200px; /* ALTURA PADRÃO PARA CADA QUADRO */
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: center; /* Centraliza o conteúdo verticalmente */
+            align-items: center; /* Centraliza o conteúdo horizontalmente */
+            box-sizing: border-box; /* Inclui padding na altura total */
+            /* flex-grow: 1; Removido, pois a altura é fixa */
         }
-        .kpi-block:last-child {
-            margin-bottom: 0;
-        }
+        /* A regra .kpi-block:last-child { margin-bottom: 0; } é agora redundante e pode ser removida se quiser */
+        
         .kpi-title {
             font-size: 1.2em;
             font-weight: bold;
@@ -46,9 +47,9 @@
             margin-top: 5px;
             margin-bottom: 10px;
         }
-        /* Cores inspiradas no TJMG/Confluence */
-        .bg-black { background-color: #1e1f21; } /* preto escuro */
-        .bg-red { background-color: #f1030b; } /* Vermelho para mudanças */
+        /* Cores conforme especificado */
+        .bg-black { background-color: #1e1f21; } /* Preto escuro */
+        .bg-red { background-color: #f1030b; } /* Vermelho */
     </style>
 </head>
 <body>
