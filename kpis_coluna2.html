@@ -7,28 +7,26 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%;
+            margin: 0; /* Remove margens do corpo do iframe */
+            padding: 0; /* Remove paddings do corpo do iframe */
+            background-color: #ffffff; /* Fundo branco para se misturar ao Confluence */
+            color: white; /* Cor de texto padrão */
+            display: flex; /* Habilita flexbox no corpo */
+            flex-direction: column; /* Organiza os blocos em coluna */
         }
         .kpi-block {
             text-align: center;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            flex-grow: 1;
+            padding: 15px; /* Mantém o padding interno */
+            margin-bottom: 0; /* REMOVIDO: Não haverá mais margem entre os blocos */
+            border-radius: 5px; /* Bordas arredondadas (se quiser remover, só apagar esta linha) */
+            height: 200px; /* ALTURA PADRÃO PARA CADA QUADRO */
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: center; /* Centraliza o conteúdo verticalmente */
+            align-items: center; /* Centraliza o conteúdo horizontalmente */
+            box-sizing: border-box; /* Inclui padding na altura total */
         }
-        .kpi-block:last-child {
-            margin-bottom: 0;
-        }
+        
         .kpi-title {
             font-size: 1.2em;
             font-weight: bold;
@@ -56,9 +54,9 @@
             font-weight: bold;
             margin-bottom: 5px;
         }
-        /* Cores */
-        .bg-yellow { background-color: #feea00; color: #333; } /* Amarelo com texto escuro */
-        .bg-black { background-color: #1e1f21; } /* Cinza escuro */
+        /* Cores conforme especificado */
+        .bg-yellow { background-color: #feea00; color: #1e1f21; } /* Amarelo com texto preto escuro para contraste */
+        .bg-black { background-color: #1e1f21; } /* Preto escuro */
     </style>
 </head>
 <body>
