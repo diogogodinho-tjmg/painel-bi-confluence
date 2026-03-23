@@ -55,17 +55,17 @@
 <body>
     <div class="kpi-block bg-black">
         <div class="kpi-title">Projetos</div>
-        <div class="kpi-value-label">em andamento</div> 
-        <div class="kpi-value">509</div>
-        <div class="kpi-value-label">concluídos em 2026</div> 
-        <div class="kpi-value">0</div>
+        <div class="kpi-value-label">em andamento</div> /* Projetos "em aberto": project = DP and issuetype = projeto and status not in (cancelado, done) order by created DESC */
+        <div class="kpi-value">133</div>
+        <div class="kpi-value-label">concluídos em 2026</div> /* Projetos com status alterado para "concluído" em 2026: project = DP and issuetype = projeto and status CHANGED TO DONE AFTER 2026-01-01 order by created DESC */
+        <div class="kpi-value">18</div>
     </div>
     <div class="kpi-block bg-red">
         <div class="kpi-title">Demandas</div>
-        <div class="kpi-value-label">em andamento</div>
-        <div class="kpi-value">4.753</div>
+        <div class="kpi-value-label">em andamento</div> /* Demandas "em aberto" e criadas em 2026: project IN (CDN..) AND issuetype in (Epic, Incidente) AND created >= startOfYear() AND status NOT IN (Concluído,Done, Cancelado) ORDER BY project DESC */
+        <div class="kpi-value">415</div>
         <div class="kpi-value-label">concluídas em 2026</div>
-        <div class="kpi-value">4.488</div>
+        <div class="kpi-value">-</div>
     </div>
 </body>
 </html>
